@@ -9,10 +9,6 @@
 
 ---
 
-<p align="center">
-<img src="https://komarev.com/ghpvc/?username=Manikanta-Gattadi&label=Profile%20views&color=0e75b6&style=flat" alt="profile views"/>
-</p>
-
 ---
 
 # 🚀 About Me
@@ -115,9 +111,31 @@
 
 # 🐍 Contribution Snake
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/Manikanta-Gattadi/Manikanta-Gattadi/output/github-contribution-grid-snake.svg"/>
-</p>
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: Manikanta-Gattadi
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg
+
+      - uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 ---
 
