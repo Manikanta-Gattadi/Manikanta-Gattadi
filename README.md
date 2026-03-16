@@ -1,5 +1,3 @@
-## Hi there 👋
-
 <h1 align="center">Hi 👋, I'm Manikanta</h1>
 <h3 align="center">B.Sc Data Science Student | Machine Learning Enthusiast | AI Developer</h3>
 
